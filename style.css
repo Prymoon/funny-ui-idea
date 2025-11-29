@@ -1,233 +1,340 @@
-*{
+:root {
+    --primary-color: #ff0055;
+    --secondary-color: #00eaff;
+    --text-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-.container{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/background.jpg);
-    background-position: center;
-    background-size: cover;
-    padding-left: 8%;
-    padding-right: 8%;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.navbar{
-    height: 12%;
+body {
+    background: #0f0c29;
+    overflow-x: hidden;
+    color: var(--text-color);
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    z-index: -1;
+}
+
+.background-animation::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,0,85,0.1) 0%, transparent 40%),
+                radial-gradient(circle, rgba(0,234,255,0.1) 0%, transparent 40%);
+    background-position: 0 0, 100% 100%;
+    animation: bgMove 20s linear infinite;
+}
+
+@keyframes bgMove {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0;
+    z-index: 10;
 }
 
-.logo{
-    width: 50px;
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-color);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.menu-icon{
-    width: 30px;
-    cursor: pointer;
-    display: none; /* Initially hidden, can be used for responsive design */
+.logo i {
+    color: var(--primary-color);
 }
 
-nav{
-    flex: 1;
-    text-align: right;
-}
-
-nav ul {
+.nav-links {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    padding: 0;
+    gap: 40px;
 }
 
-nav ul li{
-    margin-right: 60px;
-}
-
-nav ul li a{
+.nav-links li a {
     text-decoration: none;
-    color: #fff;
-    font-size: 13px;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
 }
 
-.row{
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Content Wrapper */
+.content-wrapper {
     display: flex;
-    height: 88%;
     align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    padding: 50px 0;
+    gap: 50px;
 }
 
-.col{
-    flex-basis: 50%;
+/* Text Section */
+.text-section {
+    flex: 1;
+    max-width: 600px;
 }
 
-h1{
-    color: #fff;
-    font-size: 100px;
+h1 {
+    font-size: 80px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 800;
 }
 
-p{
-    color: #fff;
-    font-size: 11px;
-    line-height: 15px;
+h1 span {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--secondary-color);
+    position: relative;
 }
 
-button{
-    width: 180px;
-    color: #000;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 0;
-    border: 0;
+h1 span::before {
+    content: 'Unknown';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    color: var(--secondary-color);
+    border-right: 4px solid var(--secondary-color);
+    overflow: hidden;
+    animation: type 4s linear infinite alternate;
+    -webkit-text-stroke: 0;
+}
+
+@keyframes type {
+    0%, 10% { width: 0; }
+    70%, 100% { width: 100%; }
+}
+
+.text-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-group {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 0, 85, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 0, 85, 0.5);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.secondary-btn:hover {
+    border-color: var(--text-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Cards Section */
+.cards-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    width: 220px;
+    height: 260px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
     border-radius: 20px;
-    outline: none;
-    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     cursor: pointer;
-    filter: brightness(150%);
-    box-shadow: -5px -5px 30px rgba(236, 17, 17, 0.3),
-                5px 5px  30px rgba(236, 17, 17, 0.3)
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
 }
 
-button:hover{
-    background-color: #964041;
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8));
+    z-index: 1;
 }
 
-.card{
-    width: 200px;
-    height: 230px;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 15px 25px;
-    box-sizing: border-box;
-    cursor: pointer;
-    margin: 10px 15px;
-    transition: transform 0.5s;
-    background-position: center;
-    background-size: cover;
+.card-content {
+    position: relative;
+    z-index: 2;
+    transform: translateY(20px);
+    transition: 0.3s;
 }
 
-.card1{
-    background-image: url(images/pic-1.jpg);
-    background-position: center;
-    background-size: cover;
+.card:hover .card-content {
+    transform: translateY(0);
 }
 
-.card2{
-    background-image: url(images/pic-2.jpg);
-    background-position: center;
-    background-size: cover;
+.card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
 }
 
-.card3{
-    background-image: url(images/pic-3.jpg);
-    background-position: center;
-    background-size: cover;
+.card h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
-.card4{
-    background-image: url(images/pic-4.jpg);
-    background-position: center;
-    background-size: cover;
+.card p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: 0.3s;
 }
 
-.card:hover{
-    transform: translateY(-10px);
+.card:hover p {
+    opacity: 1;
 }
 
-h4{
-    color: #fff;
-    text-shadow: 0 0 5px #999;
-}
+/* Card Backgrounds - Using gradients instead of images for reliability, or keep images if they exist */
+.card1 { background: url('images/pic-1.jpg') center/cover; }
+.card2 { background: url('images/pic-2.jpg') center/cover; }
+.card3 { background: url('images/pic-3.jpg') center/cover; }
+.card4 { background: url('images/pic-4.jpg') center/cover; }
 
-.card p{
-    text-shadow: 0 0 15px #000;
-    font-size: 8px;
-}
-
-/* Add this to your existing CSS */
-@media (max-width: 1200px) {
-    .navbar nav ul li {
-        margin-right: 30px;
-    }
-    h1 {
-        font-size: 80px;
-    }
-}
-
-@media (max-width: 992px) {
-    .navbar {
-        height: auto;
+/* Responsive */
+@media (max-width: 1024px) {
+    .content-wrapper {
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
     }
-    nav ul {
-        padding: 0;
-        margin: 0;
+    
+    .text-section {
+        margin-bottom: 50px;
     }
-    nav ul li {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 10px;
+    
+    .cta-group {
+        justify-content: center;
     }
-    .menu-icon {
-        display: block; /* Show menu icon for smaller screens */
+    
+    h1 span::before {
+        display: none; /* Simplify animation on smaller screens */
     }
-    .row {
-        flex-direction: column;
-    }
-    h1 {
-        font-size: 60px;
-    }
-    p {
-        font-size: 10px;
-    }
-    .card {
-        width: 100%;
-        margin: 10px 0;
-    }
-    button {
-        width: 100%;
+    h1 span {
+        -webkit-text-stroke: 0;
+        color: var(--secondary-color);
     }
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding-left: 4%;
-        padding-right: 4%;
-        height: 100%;
+    .nav-links {
+        display: none;
     }
-    nav ul li {
-        font-size: 11px;
+    
+    .menu-icon {
+        display: block;
     }
+    
     h1 {
         font-size: 50px;
     }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .card {
-        height: 200px;
+        width: 100%;
+        max-width: 300px;
     }
 }
 
-@media (max-width: 576px) {
-    .navbar {
-        align-items: flex-start;
-    }
-    .logo {
-        width: 40px;
-    }
-    .row {
-        height: auto;
-    }
-    h1 {
-        font-size: 40px;
-    }
-    p {
-        font-size: 9px;
-    }
-    button {
-        font-size: 10px;
-    }
-}

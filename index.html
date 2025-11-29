@@ -3,55 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes</title>
+    <title>Creative Space</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     
+    <div class="background-animation"></div>
+    
     <div class="container">
-        <div class="navbar">
-            <img src="images/logo.png" class="logo">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ANIME</a></li>
-                    <li><a href="">MANGA</a></li>
-                </ul>
-            </nav>
-            <img src="images/menu.png" class="menu-icon">
-        </div>
-        
-        <div class="row">
-            <div class="col">
-                <h1>Blogs</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum hic iusto sunt. Omnis accusantium placeat dolores in, sit, animi corrupti eaque atque harum, fugit asperiores magni veritatis labore ipsa praesentium!</p>
-                <a href="test.html">
-                    <button type="button">Download</button>
-                </a>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-rocket"></i> LOGO
             </div>
-            <div class="col">
-                <div class="card card1">
-                    <h4>Courses</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Anime</a></li>
+                <li><a href="#">Manga</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="text-section">
+                <h1>Explore the <br><span>Unknown</span></h1>
+                <p>Dive into a world of endless possibilities. Whether it's anime, manga, or creative blogs, we have curated the best content just for you. Experience the difference today.</p>
+                <div class="cta-group">
+                    <a href="#" class="btn primary-btn">Get Started</a>
+                    <a href="#" class="btn secondary-btn"><i class="fa-solid fa-play"></i> Watch Video</a>
                 </div>
-                <div class="card card2">
-                    <h4>Test Series</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-                </div>
-                <div class="card card3">
-                    <h4>Current affairs</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-                </div>
-                <div class="card card4">
-                    <h4>Blog</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
+            </div>
+            
+            <div class="cards-section">
+                <div class="card-grid">
+                    <div class="card card1" data-tilt>
+                        <div class="card-content">
+                            <i class="fa-solid fa-book-open"></i>
+                            <h4>Courses</h4>
+                            <p>Master new skills with our premium courses.</p>
+                        </div>
+                    </div>
+                    <div class="card card2" data-tilt>
+                        <div class="card-content">
+                            <i class="fa-solid fa-flask"></i>
+                            <h4>Labs</h4>
+                            <p>Hands-on experiments to fuel your curiosity.</p>
+                        </div>
+                    </div>
+                    <div class="card card3" data-tilt>
+                        <div class="card-content">
+                            <i class="fa-solid fa-globe"></i>
+                            <h4>News</h4>
+                            <p>Stay updated with the latest current affairs.</p>
+                        </div>
+                    </div>
+                    <div class="card card4" data-tilt>
+                        <div class="card-content">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <h4>Blog</h4>
+                            <p>Read insightful articles from top creators.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Link to the external JavaScript file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 
 </body>
