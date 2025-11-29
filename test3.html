@@ -3,89 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes</title>
-    <link rel="stylesheet" href="test4.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Class 11th Subjects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     
+    <div class="background-animation"></div>
+    
     <div class="container">
-        <div class="navbar">
-            <img src="images/logo.png" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ANIME</a></li>
-                    <li><a href="">MANGA</a></li>
-                </ul>
-            </nav>
-            <img src="images/menu.png" class="menu-icon">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-rocket"></i> LOGO
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Anime</a></li>
+                <li><a href="#">Manga</a></li>
+            </ul>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper" style="flex-direction: column; padding-top: 20px;">
+            <h2 class="page-title">Class 11th Subjects</h2>
+            
+            <div class="cards-section">
+                <div class="card-grid">
+                    <div class="card" data-tilt>
+                        <a href="https://tinyurl.com/path-creation">
+                            <div class="card-content">
+                                <i class="fa-solid fa-language"></i>
+                                <h4>English</h4>
+                                <p>Literature and Grammar.</p>
+                            </div>
+                        </a>
+                    </div>            
+                    <div class="card" data-tilt>
+                        <a href="#">
+                            <div class="card-content">
+                                <i class="fa-solid fa-om"></i>
+                                <h4>Hindi</h4>
+                                <p>Language and Literature.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card" data-tilt>
+                        <a href="https://tinyurl.com/46yxb748">
+                            <div class="card-content">
+                                <i class="fa-solid fa-calculator"></i>
+                                <h4>Math</h4>
+                                <p>Algebra, Geometry, and more.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card" data-tilt>
+                        <a href="https://tinyurl.com/path-creation1">
+                            <div class="card-content">
+                                <i class="fa-solid fa-atom"></i>
+                                <h4>Physics</h4>
+                                <p>Laws of motion and energy.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card" data-tilt>
+                        <a href="https://tinyurl.com/2jm86yfz">
+                            <div class="card-content">
+                                <i class="fa-solid fa-flask"></i>
+                                <h4>Chemistry</h4>
+                                <p>Matter and reactions.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card" data-tilt>
+                        <a href="#">
+                            <div class="card-content">
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <h4>IT</h4>
+                                <p>Information Technology.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card" data-tilt>
+                        <a href="https://tinyurl.com/24rh3uh7">
+                            <div class="card-content">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <h4>Business</h4>
+                                <p>Business Studies.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card" data-tilt>
+                        <a href="https://tinyurl.com/u4s47w73">
+                            <div class="card-content">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <h4>Economics</h4>
+                                <p>Micro and Macro Economics.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card" data-tilt>
+                        <a href="https://tinyurl.com/mumk89c5">
+                            <div class="card-content">
+                                <i class="fa-solid fa-dna"></i>
+                                <h4>Biology</h4>
+                                <p>Life and living organisms.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card" data-tilt>
+                        <a href="https://tinyurl.com/5d47vcdt">
+                            <div class="card-content">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                <h4>Accountancy</h4>
+                                <p>Financial Accounting.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-    <div class="row">
-        <div class="col">
-            <div class="card card1">
-                <a href="https://tinyurl.com/path-creation">
-                    <h5>English</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-                </a>
-            </div>            
-            <div class="card card2">
-                <h5>Hindi</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </div>
-            <div class="card card1">
-                <a href="https://tinyurl.com/46yxb748">
-                <h5>Math</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </a>
-            </div>
-            <div class="card card2">
-                <a href="https://tinyurl.com/path-creation1">
-                <h5>Physics</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </a>
-            </div>
-            <div class="card card5">
-                <a href="https://tinyurl.com/2jm86yfz">
-                <h5>Chemistry</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </a>
-            </div>
-            <div class="card card6">
-                <h5>IT</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </div>
-            <div class="card card7">
-                <a href="https://tinyurl.com/24rh3uh7">
-                <h5>Business</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </a>
-            </div>
-            <div class="card card8">
-                <a href="https://tinyurl.com/u4s47w73">
-                <h5>Ecomomic</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </a>
-            </div>
-            <div class="card card9">
-                <a href="https://tinyurl.com/mumk89c5">
-                <h5>Biology</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </a>
-            </div>
-            <div class="card card10">
-                <a href="https://tinyurl.com/5d47vcdt">
-                <h5>Accountancy</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, saepe.</p>
-            </a>
-            </div>
-      </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            VanillaTilt.init(document.querySelectorAll(".card"), {
+                max: 25,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.5,
+            });
+
             const images = [
                 "url('images/pic-5.jpg')",
                 "url('images/pic-6.jpg')",
@@ -100,13 +153,14 @@
             ];
 
             const cards = document.querySelectorAll('.card');
-
-            // Shuffle the images array
             images.sort(() => Math.random() - 0.5);
 
-            // Assign shuffled images to the cards
             cards.forEach((card, index) => {
-                card.style.backgroundImage = images[index];
+                if(images[index]) {
+                    card.style.backgroundImage = images[index];
+                    card.style.backgroundSize = 'cover';
+                    card.style.backgroundPosition = 'center';
+                }
             });
         });
     </script>
