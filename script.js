@@ -23,14 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Assign shuffled images to the cards
     cards.forEach((card, index) => {
-        // We set the background image but keep the gradient overlay defined in CSS
-        // To do this, we need to be careful not to overwrite the CSS background entirely if it has other properties
-        // But in our CSS, .card has background: var(--glass-bg). 
-        // The images were set as classes .card1, .card2 etc in CSS.
-        // Let's override the background-image property specifically.
-        card.style.backgroundImage = images[index];
-        card.style.backgroundSize = 'cover';
-        card.style.backgroundPosition = 'center';
+        // Use modulo to cycle through images if there are more cards than images
+        if (images.length > 0) {
+            card.style.backgroundImage = images[index % images.length];
+            card.style.backgroundSize = 'cover';
+            card.style.backgroundPosition = 'center';
+        }
     });
 
     // Naughty Button Logic (The "Funny" Part)
